@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results {% endblock title%}
+{% block blogactive %} bg-primary {% endblock blogactive %}
+
+{% block body %}
+
+
+<div class="container my-2">
+<h2>Search results :</h2>
+
+{% if allPosts|length < 1 %}
+<p>No Search Results</p>
+Your search - <b>{{query}}</b> - did not match any document.<br>
+<b>Suggestions: </b> <br>
+<li>Try Different Keywords.</li>
+
+{% endif %}
+  
+  
+{% for post in allPosts %}
+      
+<div class="row g-0 border rounded overflow-hidden flex-md-row my-4 shadow-sm h-md-250 position-relative bg-light text-dark">
+    <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">Article By {{post.author}}</strong>
+        <h3 class="mb-0">{{post.title}}</h3>
+        <p class="card-text mb-auto">{{post.content | truncatechars:100}}</p>
+        <div>
+        <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary my-2">Continue reading</a>
+        </div>
+    </div>
+      <div class="col-auto d-none d-lg-block">
+  
+      </div>
+</div>
+ 
+{% endfor %}
+</div>
+<hr>
+<div class="container my-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3>
+    <div class="col">
+        <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Fast Food" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Fast Food</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">Fast food refers to food that can be prepared and served quickly. It can come from many places: sit-down restaurants, counter service, take-out, drive-thru, and delivery. Fast food is popular because the food is inexpensive, and tastes good.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Italian" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Italian</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">Italian cuisine is a Mediterranean cuisine consisting of the ingredients, recipes and cooking techniques developed across the Italian Peninsula since antiquity, and later spread around the world together with waves of Italian diaspora.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        
+
+        <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Russian Food" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Russian Food</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">Russian national cuisine uses lots of grains and roots, vegetables, and everything else that vast lands, rich woods, and a plentiful of lakes and rivers have to offer. Staple Russian food features lots of fish, mushrooms, and berries.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+

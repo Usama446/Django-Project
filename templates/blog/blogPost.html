@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog Post {% endblock title%}
+
+{% block blogactive %} bg-primary {% endblock blogactive %}
+
+{% block body %}
+
+<div class="container my-3">
+    <h2 class="blog-post-title">{{post.title}}</h2>
+    <p>{{post.content}}</p>
+</div>
+<div class="container">
+    <h2>Comments</h2>
+    <div class="row my-3">
+        <div class="col-md-2 bg-success">Image Here</div>
+        <div class="col-md-10 bg-primary">This Website is Awsome.</div>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-2 bg-success">Image Here</div>
+        <div class="col-md-10 bg-primary">This Website is Awsome.</div>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-2 bg-success">Image Here</div>
+        <div class="col-md-10 bg-primary">This Website is Awsome.</div>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-2 bg-success">Image Here</div>
+        <div class="col-md-10 bg-primary">This Website is Awsome.</div>
+    </div>
+</div>
+
+
+{% endblock body %}
